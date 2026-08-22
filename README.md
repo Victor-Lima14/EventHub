@@ -86,7 +86,7 @@ O design foi construído sobre uma proposta **Festival & Event-App**, utilizando
 ## 📂 Estrutura do Projeto
 
 ```text
-EventHub/
+/
 ├── backend/                  # Servidor de API Node.js + Express
 │   ├── controllers/          # Lógica de controle de rotas (authController, eventController, dashboardController)
 │   ├── database/             # Conexão SQLite3, esquema e arquivo do banco
