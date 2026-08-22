@@ -1,4 +1,4 @@
-const BASE_URL = 'https://onrender.com/api';
+const BASE_URL = 'http://localhost:3000/api';
 
 async function apiRequest(endpoint, options = {}) {
   const token = localStorage.getItem('token');
