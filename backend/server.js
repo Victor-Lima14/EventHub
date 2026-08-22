@@ -9,8 +9,21 @@ require('./database/db');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Origem permitida para requisições CORS.
+// Em produção (Render), FRONTEND_URL deve ser configurado no painel de variáveis de ambiente
+// com o domínio real do frontend no Vercel (ex: https://meu-app.vercel.app).
+// Em desenvolvimento local, usa http://localhost:5173 como fallback.
+const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
+
+const corsOptions = {
+  origin: allowedOrigin,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 

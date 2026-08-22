@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_festival_key_2026_dev';
+// JWT_SECRET deve ser definido como variável de ambiente (sem fallback em produção).
+// Configure esta variável no painel do Render antes de publicar.
+const JWT_SECRET = process.env.JWT_SECRET;
 
 exports.register = (req, res) => {
   const { name, email, password } = req.body;

@@ -2,7 +2,11 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-// Garante que o diretório de uploads existe
+// AVISO DE PERSISTÊNCIA (Render Free Tier):
+// O sistema de arquivos do Render é efêmero — os arquivos salvos na pasta 'uploads'
+// são perdidos a cada novo deploy ou reinicialização do serviço.
+// Para um projeto em produção real, considere usar um serviço de armazenamento externo
+// como AWS S3, Cloudinary ou similar. Para uso em portfólio, este comportamento é aceitável.
 const uploadsDir = path.join(__dirname, '../uploads');
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });

@@ -2,7 +2,9 @@ const db = require('../database/db');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_festival_key_2026_dev';
+// JWT_SECRET deve ser definido como variável de ambiente (sem fallback em produção).
+// Configure esta variável no painel do Render antes de publicar.
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Função auxiliar para tentar obter o ID do usuário através do Token, se disponível (opcional)
 function getOptionalUserId(req) {
