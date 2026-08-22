@@ -1,4 +1,9 @@
-const BASE_URL = 'http://localhost:3000/api';
+// Configuração da URL base do backend obtida das variáveis de ambiente do Vite.
+// Em desenvolvimento local: VITE_API_URL=http://localhost:3000
+// Em produção (Render/Vercel): VITE_API_URL=https://eventhub-ka7u.onrender.com
+export const BACKEND_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3000').replace(/\/$/, '');
+const BASE_URL = `${BACKEND_URL}/api`;
+
 
 async function apiRequest(endpoint, options = {}) {
   const token = localStorage.getItem('token');

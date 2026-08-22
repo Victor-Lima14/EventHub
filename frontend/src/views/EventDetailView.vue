@@ -137,7 +137,7 @@
 <script setup>
 import { ref, onMounted, computed, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { api } from '../services/api';
+import { api, BACKEND_URL } from '../services/api';
 import { showToast } from '../services/toast';
 
 const route = useRoute();
@@ -164,7 +164,7 @@ function loadUser() {
 // Resolver URL da imagem (uploads locais vs URLs remotas)
 const resolvedImageSrc = computed(() => {
   const src = event.value?.image_url || '';
-  if (src.startsWith('/uploads/')) return `http://localhost:3000${src}`;
+  if (src.startsWith('/uploads/')) return `${BACKEND_URL}${src}`;
   return src;
 });
 

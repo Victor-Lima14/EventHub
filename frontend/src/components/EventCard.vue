@@ -67,6 +67,7 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { showToast } from '../services/toast';
+import { BACKEND_URL } from '../services/api';
 
 const props = defineProps({
   event: {
@@ -85,7 +86,7 @@ const router = useRouter();
 // Resolver URL da imagem: caminhos locais /uploads/ recebem o host do backend
 const resolvedImageSrc = computed(() => {
   const src = props.event.image_url || '';
-  if (src.startsWith('/uploads/')) return `http://localhost:3000${src}`;
+  if (src.startsWith('/uploads/')) return `${BACKEND_URL}${src}`;
   return src;
 });
 

@@ -260,10 +260,8 @@
 
 <script setup>
 import { ref, onMounted, computed, reactive, nextTick } from 'vue';
-import { api } from '../services/api';
+import { api, BACKEND_URL } from '../services/api';
 import { showToast } from '../services/toast';
-
-const BACKEND_URL = 'http://localhost:3000';
 
 const stats = ref({ totalEvents: 0, totalRegistrations: 0, eventsDetail: [] });
 const isLoading = ref(true);
