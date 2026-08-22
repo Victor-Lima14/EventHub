@@ -1,0 +1,3 @@
+# Diretório de Ativos Estáticos (frontend/src/assets/images)
+Armazena ativos estáticos do projeto, como logotipos, favicons e ilustrações fixas da interface.
+Não deve ser misturado com a pasta /backend/uploads, destinada a uploads de imagens de eventos em tempo de execução.

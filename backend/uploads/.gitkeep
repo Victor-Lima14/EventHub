@@ -1,0 +1,2 @@
+# Diretório de Uploads Dinâmicos (backend/uploads)
+Reservado exclusivamente para salvar arquivos de imagens de eventos enviados pelos administradores em tempo de execução via Multer.
