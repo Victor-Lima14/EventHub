@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 // JWT_SECRET deve ser definido como variável de ambiente (sem fallback em produção).
-// Configure esta variável no painel do Render antes de publicar.
 const JWT_SECRET = process.env.JWT_SECRET;
 
 function authenticateToken(req, res, next) {

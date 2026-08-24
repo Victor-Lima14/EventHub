@@ -54,7 +54,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
-// Import do logo removido — guia.png é utilizado apenas como favicon (via /public/guia.png)
 import { showToast } from '../services/toast';
 
 const router = useRouter();
@@ -150,8 +149,6 @@ function logout() {
   gap: 0.5rem;
   text-decoration: none;
 }
-
-/* Classe .logo-icon-img removida — ícone não é mais exibido na navbar */
 
 .logo-text {
   font-family: var(--font-title);
